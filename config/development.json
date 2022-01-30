@@ -1,0 +1,9 @@
+{
+  "cors": {
+    "enabled": true,
+    "options": {
+      "origin": "http://localhost:1234",
+      "credentials": true
+    }
+  }
+}

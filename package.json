@@ -1,0 +1,35 @@
+{
+  "name": "simple-webapp",
+  "version": "0.0.0",
+  "author": "Rafe Goldberg <rafegoldberg@gmail.com>",
+  "private": true,
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "build": "npm run clean && parcel build --dist-dir public",
+    "start": "nodemon ./server/index.mjs",
+    "clean": "rm -rf .parcel-cache/ public/*",
+    "dev": "NODE_ENV=local parcel"
+  },
+  "dependencies": {
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "swr": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@parcel/transformer-sass": "^2.2.1",
+    "nodemon": "^2.0.15",
+    "parcel": "^2.2.1",
+    "sass": "^1.49.0"
+  }
+}
