@@ -1,6 +1,7 @@
+.env
 dist
 
+*.temp.*
 .vscode
-
 node_modules
 .parcel-cache
