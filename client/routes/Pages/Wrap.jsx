@@ -13,7 +13,9 @@ const PagesWrap = () => {
   return (
     <div className={bem()}>
       <h3>
-        <Link to={!oneof ? "/pages" : "/"}>←</Link>
+        <Link style={{ marginLeft: "-.9em" }} to={!oneof ? "/pages" : "/"}>
+          ←
+        </Link>
         {oneof
           ? "All Pages"
           : pages?.length > 1

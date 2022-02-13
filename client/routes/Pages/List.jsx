@@ -2,14 +2,7 @@ import React, { Fragment } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import { useClassy } from "use-classy";
 
-import User from ".";
-
-const PagesList = ({
-  children,
-  tag: Tag = "li",
-  wrap: Wrap = "ul",
-  ...props
-}) => {
+const PagesList = ({ tag: Tag = "li", wrap: Wrap = "ul" }) => {
   const pages = useOutletContext();
   const bem = useClassy("PagesList");
   const wrapProps = Wrap !== Fragment ? { className: bem() } : {};

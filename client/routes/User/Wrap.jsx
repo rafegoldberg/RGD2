@@ -13,7 +13,9 @@ const UsersWrap = () => {
   return (
     <div className={bem()}>
       <h3>
-        <Link to={!oneof ? "/users" : "/"}>←</Link>
+        <Link style={{ marginLeft: "-.9em" }} to={!oneof ? "/users" : "/"}>
+          ←
+        </Link>
         {oneof
           ? "All Users"
           : users?.length > 1

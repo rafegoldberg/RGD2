@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useOutletContext, useParams } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import { useClassy } from "use-classy";
 
 const Page = (props) => {
