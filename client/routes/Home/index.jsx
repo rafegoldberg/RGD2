@@ -8,6 +8,9 @@ const HomePage = () => (
       <li>
         <Link to="/users">All Users</Link>
       </li>
+      <li>
+        <Link to="/pages">All Pages</Link>
+      </li>
     </ul>
   </React.Fragment>
 );
