@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
+const { SERVER_URI = "" } = process.env;
+
 const fetcher = async (filter, callback) => {
   const qry = new URLSearchParams(filter);
-  const res = await fetch(`http://localhost:5678/api/users?${qry}`);
+  const res = await fetch(`${SERVER_URI}/api/users?${qry}`);
   const json = await res.json();
   if (typeof callback === "function") callback(json);
   return json;
