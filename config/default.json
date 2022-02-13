@@ -1,4 +1,3 @@
 {
-  "db": "mongodb://localhost:27017/rg-test",
-  "port": 5678
+  "db": "mongodb://localhost:27017/rg-test"
 }

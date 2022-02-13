@@ -1,8 +1,8 @@
-// require('dotenv').config();
-
-import config from "config";
+import "dotenv/config";
 import app from "./app.mjs";
 
-app.listen(config.port, () => {
-  console.log(`Server listening on port ${config.port}`);
+const { PORT } = process.env;
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
