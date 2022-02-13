@@ -1,0 +1,25 @@
+.AdminDash {
+  --gap: .5em;
+  position: fixed;
+  right: calc(var(--gap) * 2);
+  top: calc(var(--gap) * 2);
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding: calc(var(--gap) * 1.25);
+  background: white;
+  border: 1px solid #DDD;
+  border-radius: calc(var(--gap) * .66);
+  font-size: small;
+  > * {
+    margin: 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    border-color: black;
+    background: #191919;
+    button {
+      filter: #{'invert(1)'};
+      opacity: .75;
+    }
+  }
+}

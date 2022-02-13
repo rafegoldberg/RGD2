@@ -1,10 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useLocation, useOutletContext, useParams } from "react-router-dom";
+import { useClassy } from "use-classy";
 
-const User = (props) => (
-  <pre>
-    <code>{JSON.stringify(props, null, 2)}</code>
-  </pre>
-);
+const User = (props) => {
+  const fromProps = !!Object.keys(props).length;
+  const users = useOutletContext();
+  const bem = useClassy("User");
+  return (
+    <pre className={bem()}>
+      <code>{JSON.stringify(fromProps ? props : users?.[0], null, 2)}</code>
+    </pre>
+  );
+};
 
 export default User;

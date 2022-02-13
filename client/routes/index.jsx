@@ -1,16 +1,27 @@
 import React from "react";
-import { Route, Routes as Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
+import AdminDash from "./Admin";
+
+import Home from "./Home";
 import User from "./User";
-import UserList from "./User/List";
+import Users from "./User/List";
+import UsersWrap from "./User/Wrap";
 
 const AppRouter = () => (
-  <Switch>
-    <Route path="users/" element={<UserList />}>
-      <Route path=":username" />
-    </Route>
-    <Route path="*" element={<h3>Fallback Route</h3>} />
-  </Switch>
+  <React.Fragment>
+    <Routes>
+      <Route path="*" element={<AdminDash />} />
+    </Routes>
+    <Routes>
+      <Route element={<AdminDash />} />
+      <Route path="users" element={<UsersWrap />}>
+        <Route path=":username" element={<User />} />
+        <Route index element={<Users />} />
+      </Route>
+      <Route path="*" element={<Home />} />
+    </Routes>
+  </React.Fragment>
 );
 
 export default AppRouter;

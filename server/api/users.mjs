@@ -21,16 +21,19 @@ export async function findUsers(filter = {}) {
 }
 
 export default (app) => {
-  app.get("/users/:username?", async ({ query, params: { username } }, res) => {
-    const filter = username ? { username, ...query } : query;
-    try {
-      const users = await findUsers(filter);
-      return res.json(users);
-    } catch (e) {
-      return res.status(400).json({ error: e.message });
+  app.get(
+    "/api/users/:username?",
+    async ({ query, params: { username } }, res) => {
+      const filter = username ? { username, ...query } : query;
+      try {
+        const users = await findUsers(filter);
+        return res.json(users);
+      } catch (e) {
+        return res.status(400).json({ error: e.message });
+      }
     }
-  });
-  app.post("/users/:username", async ({ query, params }, res) => {
+  );
+  app.post("/api/users/:username", async ({ query, params }, res) => {
     const { username } = params;
     try {
       const updated = await updateUser(username, query);
@@ -39,7 +42,7 @@ export default (app) => {
       return res.status(500).json({ error: e.message });
     }
   });
-  app.put("/users/:username", async ({ query, params }, res) => {
+  app.put("/api/users/:username", async ({ query, params }, res) => {
     const { username } = params;
     try {
       const updated = await updateUser(username, query, true);
