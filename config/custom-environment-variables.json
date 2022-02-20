@@ -1,0 +1,7 @@
+{
+  "session": {
+    "expressSession": {
+      "secret": "SESSION_SECRET"
+    }
+  }
+}
