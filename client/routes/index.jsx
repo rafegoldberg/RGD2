@@ -15,12 +15,12 @@ import PagesWrap from "./Pages/Wrap";
 
 const { HOMEPAGE } = process.env;
 
-const SWRConfig = {
+const swrOptions = {
   refreshInterval: 3000,
 };
 
 const AppRouter = () => (
-  <SWRConfig value={SWRConfig}>
+  <SWRConfig value={swrOptions}>
     {/* <Routes>
       <Route path="*" element={<AdminDash />} />
     </Routes> */}
