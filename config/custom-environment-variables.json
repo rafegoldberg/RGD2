@@ -1,6 +1,6 @@
 {
   "port": "PORT",
-  "mongodb": {
+  "mongo": {
     "uri": "MONGODB_URI"
   },
   "session": {
