@@ -1,3 +1,19 @@
 {
-  "db": "mongodb://localhost:27017/rg-test"
+  "mongo": {
+    "uri": "mongodb://localhost:27017/rg-test",
+    "debug": true,
+    "sessionCollection": "sessions"
+  },
+  "session": {
+    "mock": false,
+    "expressSession": {
+      "cookie": {
+        "maxAge": 1209600000,
+        "secure": true
+      },
+      "resave": true,
+      "saveUninitialized": true,
+      "unset": "destroy"
+    }
+  }
 }

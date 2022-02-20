@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { SWRConfig } from "swr";
 
 import AdminDash from "./Admin";
 
@@ -10,27 +11,31 @@ import Users from "./User/List";
 import UsersWrap from "./User/Wrap";
 
 import Page from "./Pages";
-import Pages from "./Pages/List";
 import PagesWrap from "./Pages/Wrap";
 
+const { HOMEPAGE } = process.env;
+
+const SWRConfig = {
+  refreshInterval: 3000,
+};
+
 const AppRouter = () => (
-  <React.Fragment>
-    <Routes>
+  <SWRConfig value={SWRConfig}>
+    {/* <Routes>
       <Route path="*" element={<AdminDash />} />
-    </Routes>
+    </Routes> */}
     <Routes>
-      <Route element={<AdminDash />} />
+      <Route path="/" element={<PagesWrap />}>
+        {/* <Route path=":title" element={<Page />} /> */}
+        <Route path="*" element={<Page />} />
+        <Route index element={<Page />} />
+      </Route>
       <Route path="users" element={<UsersWrap />}>
         <Route path=":username" element={<User />} />
         <Route index element={<Users />} />
       </Route>
-      <Route path="pages" element={<PagesWrap />}>
-        <Route path=":title" element={<Page />} />
-        <Route index element={<Pages />} />
-      </Route>
-      <Route path="*" element={<Home />} />
     </Routes>
-  </React.Fragment>
+  </SWRConfig>
 );
 
 export default AppRouter;

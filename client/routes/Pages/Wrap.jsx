@@ -1,28 +1,25 @@
 import React from "react";
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { useClassy } from "use-classy";
 
-import useFetchPages from "./useFetchPages";
+import usePagesAPI from "./usePagesAPI";
+import Pages from "./List";
+import { SWRConfig } from "swr";
+
+const { HOMEPAGE } = process.env;
 
 const PagesWrap = () => {
-  const { search: qry } = useLocation();
-  const { title } = useParams();
-  const [pages] = useFetchPages();
   const bem = useClassy("Pages");
-  const oneof = !(title || qry);
+  let { title, ["*"]: path } = useParams();
+  const res = usePagesAPI(
+    title || path?.split("/")?.reverse?.()?.[0] || HOMEPAGE
+  );
   return (
     <div className={bem()}>
-      <h3>
-        <Link style={{ marginLeft: "-.9em" }} to={!oneof ? "/pages" : "/"}>
-          ←
-        </Link>
-        {oneof
-          ? "All Pages"
-          : pages?.length > 1
-          ? "Pages"
-          : pages?.[0]?.title || title}
-      </h3>
-      <Outlet context={pages} />
+      <SWRConfig value={{ revalidateIfStale: false }}>
+        <Pages />
+      </SWRConfig>
+      <Outlet context={res} />
     </div>
   );
 };

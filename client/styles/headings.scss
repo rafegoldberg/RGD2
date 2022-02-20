@@ -1,0 +1,60 @@
+@import "./@fluidtype.scss";
+
+$hScale: 
+  2.746582em 3.4332275em,
+  2.1972656em 2.746582em,
+  1.7578125em 2.1972656em,
+  1.40625em 1.7578125em,
+  1.125em 1.40625em,
+  1em 1.125em;
+
+%H {
+  line-height: 1;
+  margin: gutter() / 2 0;
+  > a:not(:hover) {
+    text-decoration: none;
+  }
+  @for $i from 6 through 1 {
+    $scale: nth($hScale, $i);
+    &#{$i} {
+      @extend %H;
+      @include fluidtype(
+        $range: config(range, width, min) config(range, width, max),
+        $scale: $scale,
+        $units: em
+      );
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  margin: 0 0 1em;
+  article &:not(:first-child) {
+    margin-top: 1.33em;
+  }
+}
+
+h1 {
+  @extend %H1;
+}
+h2 {
+  @extend %H2;
+  font-weight: bold;
+}
+h3 {
+  @extend %H3;
+}
+h4 {
+  @extend %H4;
+  font-weight: bold;
+}
+h5 {
+  @extend %H5;
+}
+h6 {
+  @extend %H6;
+  font-weight: bold;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+}

@@ -1,21 +1,16 @@
 import User from "../models/user.mjs";
-import { connect, disconnect } from "../db.mjs";
 
 export async function updateUser(username, updates = {}, upsert) {
   if (!username) throw new Error("Username is required.");
-  await connect();
   const user = await User.findOneAndUpdate({ username }, updates, {
     upsert, // add if not found
     new: true, // return the updated doc
   });
-  await disconnect();
   return user;
 }
 
 export async function findUsers(filter = {}) {
-  await connect();
   let users = await User.find(filter || {});
-  await disconnect();
   if (!users) throw new Error(`Nothing found for '${username}'.`);
   return users;
 }

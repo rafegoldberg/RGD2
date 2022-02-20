@@ -1,0 +1,49 @@
+@function ununit($number) {
+  // Remove the unit from any numeric Sass value.
+  // ```
+  //   .ex { width: ununit($length) }
+  // ```
+  // $length<Number>: a number to de-unit.
+  @if type-of($number) == "number" and not unitless($number) {
+    @return #{$number / ($number * 0 + 1)};
+  }
+  @return $number;
+}
+
+@mixin fluidtype($range: 960px 1800px, $scale: 12px 16px, $units: px) {
+  // Fluidly adjust a base font-size on a `$scale`
+  // relative to the given viewport `$range`. Use
+  // it as follows. (Note that all args should be
+  // set in the same units!)
+  // ```
+  //   :root {
+  //     @include fluidtype(
+  //       $range: 960px 1800px,
+  //       $scale: 12px 16px,
+  //       $units: px
+  //     );
+  //   }
+  // ```
+  // $range<List>: the `min max` viewport range
+  // $scale<List>: the `min max` font-size scale
+  // $units<Str>:  root CSS units to use
+  $min-width: ununit(nth($range,1));
+  $max-width: ununit(nth($range,2));
+  $min-font:  ununit(nth($scale,1));
+  $max-font:  ununit(nth($scale,2));
+  & {
+    font-size: #{$min-font}#{$units};
+    @media (min-width: #{$min-width}#{$units}) and
+           (max-width: #{$max-width}#{$units}) {
+      & { font-size: calc(
+           #{$min-font}#{$units} +
+           (#{$max-font} - #{$min-font}) *
+           ((100vw - #{$min-width}#{$units}) / ( #{$max-width} - #{$min-width}) )
+        );
+      }
+    }
+    @media (min-width: #{$max-width}#{$units}) {
+      & { font-size: #{$max-font}#{$units} }
+    }//@media
+  }
+}
