@@ -1,6 +1,5 @@
 {
   "mongo": {
-    "uri": "mongodb://localhost:27017/rg-test",
     "debug": true,
     "sessionCollection": "sessions"
   },
