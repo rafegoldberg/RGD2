@@ -27,27 +27,25 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1.33em;
   }
 }
+h1, h2, h3 {
+  font-weight: 100;
+}
 
 h1 {
   @extend %H1;
 }
 h2 {
   @extend %H2;
-  font-weight: bold;
 }
 h3 {
   @extend %H3;
 }
 h4 {
   @extend %H4;
-  font-weight: bold;
 }
 h5 {
   @extend %H5;
 }
 h6 {
   @extend %H6;
-  font-weight: bold;
-  font-family: var(--font-sans);
-  text-transform: uppercase;
 }

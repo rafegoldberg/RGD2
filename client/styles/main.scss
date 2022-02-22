@@ -22,7 +22,6 @@ html {
   line-height: 1.6;
   font-family: var(--font-sans);
   @include fluidtype($range: 0 2400px, $scale: 14px 24px, $units: px);
-  &,
   body {
     margin: 0;
     padding: 0;
@@ -30,6 +29,7 @@ html {
     color: var(--text);
     transition: .3s .1s;
     transition-property: background, color;
+    text-size-adjust: none;
   }
 }
 
