@@ -1,11 +1,11 @@
 %img-align {
   &-right {
     float: right;
-    margin-left: .75rem;
+    margin-left: 0.75rem;
   }
   &-left {
     float: left;
-    margin-right: .75rem;
+    margin-right: 0.75rem;
   }
   &-center {
     display: block;
@@ -24,17 +24,30 @@ img {
     outline: none !important;
   }
 
-  &[align=right],
-  &[alt~=align-right] {
+  &[align="right"],
+  &[alt~="align-right"] {
     @extend %img-align-right;
   }
-  &[align=left],
-  &[alt~=align-left] {
+  &[align="left"],
+  &[alt~="align-left"] {
     @extend %img-align-left;
   }
   &[width="80%"],
-  &[align=center],
-  &[alt~=align-center] {
+  &[align="center"],
+  &[alt~="align-center"] {
     @extend %img-align-center;
+  }
+  &.mdxImage {
+    // width: 100%;
+    // height: auto;
+    opacity: 1;
+    transition: 0.3s 0.3s;
+    transition-property: opacity;
+    &.loading {
+      opacity: 0;
+    }
+    &:not(.loading) {
+      height: auto;
+    }
   }
 }

@@ -1,3 +1,5 @@
+import imgs from "./*.png";
+
 <Theme
   text="#e6e6e7"
   links="#e6e6e7"
@@ -15,8 +17,9 @@
   <img
     align="right"
     width="50%"
-    src="http://rgd2.co/works/content/1-projects/6-larrc/cards-2.png"
+    src={imgs.cards2}
     style={{ marginBottom: "1em" }}
+    loading="lazy"
   />
 </h2>
 
@@ -28,8 +31,9 @@ and digital campaign for their annual “Let's Talk River” fundraiser.
 <img
   align="right"
   width="50%"
-  src="http://rgd2.co/works/content/1-projects/6-larrc/cards-1.png"
+  src={imgs.cards1}
   style={{ marginBottom: "1em" }}
+  loading="lazy"
 />
 
 This project included everything from invitation postcards to donation inserts
@@ -42,5 +46,6 @@ e-vite minisite.
 <img
   align="center"
   width="100%"
-  src="http://rgd2.co/works/content/1-projects/6-larrc/sponsor-insert.png"
+  src={imgs.sponsorInsert}
+  loading="lazy"
 />

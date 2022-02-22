@@ -3,7 +3,7 @@ import { Outlet, useParams } from "react-router-dom";
 import { useClassy } from "use-classy";
 import { SWRConfig } from "swr";
 
-import Header from "../../ui/Header";
+import RGD2Header from "../../ui/RGD2Header";
 
 import usePagesAPI from "./usePagesAPI";
 import Pages from "./List";
@@ -19,7 +19,7 @@ const PagesWrap = () => {
   return (
     <div className={bem()}>
       <SWRConfig value={{ revalidateIfStale: false }}>
-        <Header />
+        <RGD2Header />
         <Pages />
       </SWRConfig>
       <div>

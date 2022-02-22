@@ -5,15 +5,17 @@
     position: relative;
     display: flex;
     z-index: 100;
+    cursor: pointer;
     h1 {
-      font-family: var(--font-sans);
-      font-weight: 900;
-      letter-spacing: -0.09em;
-      line-height: 1;
       position: absolute;
       right: 54%;
       top: 50%;
       transform: translateY(-50%);
+      margin: 0 !important;
+      font-family: var(--font-sans);
+      font-weight: 900;
+      letter-spacing: -0.09em;
+      line-height: 1;
     }
     svg {
       opacity: 25%;
@@ -21,8 +23,8 @@
   }
   @media (min-width: $break-mobile) {
     position: fixed;
-    top: 1em;
-    right: 1em;
+    top: 1.6em;
+    right: 1.6em;
   }
   @media (max-width: $break-mobile) {
     align-self: flex-start;
@@ -34,6 +36,7 @@
       display: none;
     }
     svg {
-      position: absolute;    }
+      position: absolute;
+    }
   }
 }

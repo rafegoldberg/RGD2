@@ -1,3 +1,5 @@
+import imgs from "./*.png";
+
 <Theme
   matte="#f9f9fb"
   text="#212121"
@@ -19,9 +21,11 @@ During my internship with the New York Times, I had the opportunity to work with
 >
   <img
     alt="A NYT infographic showing a timeline of the Olympic torch."
-    src="http://rgd2.co/next/content/3-portfolio/8-the-new-york-times/nyt-test-1.png"
+    src={imgs.torches}
     width="80%"
+    height="400px"
     align="center"
+    loading="lazy"
   />
 </a>
 
@@ -34,8 +38,10 @@ This glimpse in to how the paper of record creates their renowned interactive jo
 >
   <img
     alt="A NYT infographic showing a world map of gold medals per country."
-    src="http://rgd2.co/next/content/3-portfolio/8-the-new-york-times/nyt-test.png"
+    src={imgs.medalsMap}
     width="60%"
+    height="400px"
     align="center"
+    loading="lazy"
   />
 </a>

@@ -1,12 +1,23 @@
 import path from "path";
 import url from "url";
 
-import React from "react";
+import React, { useState } from "react";
+import classy from "use-classy";
 import { MDXProvider } from "@mdx-js/react";
 import { Link, useLocation } from "react-router-dom";
 
 export const components = {
-  img: (props) => <img {...props} />,
+  img: ({ className, ...props }) => {
+    const [loading, setLoading] = useState("loading");
+    console.log({ className, ...props });
+    return (
+      <img
+        {...props}
+        className={classy("mdxImage", loading, className)}
+        onLoad={() => setLoading("")}
+      />
+    );
+  },
   a: ({ href, ...props }) => {
     const { pathname: root } = useLocation();
     const to = path.resolve(root, href);
