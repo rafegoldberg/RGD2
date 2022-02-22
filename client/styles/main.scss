@@ -3,7 +3,9 @@
 @import "./--theme.scss";
 @import "./@expand.scss";
 @import "./@fluidtype.scss";
+@import "./images.scss";
 @import "./headings.scss";
+@import "./tables.scss";
 
 :root {
   @include expand($theme, '--');
@@ -19,13 +21,15 @@
 html {
   line-height: 1.6;
   font-family: var(--font-sans);
-  @include fluidtype($range: 0 3600px, $scale: 14px 24px, $units: px);
+  @include fluidtype($range: 0 2400px, $scale: 14px 24px, $units: px);
   &,
   body {
     margin: 0;
     padding: 0;
     background: var(--matte);
     color: var(--text);
+    transition: .3s .1s;
+    transition-property: background, color;
   }
 }
 

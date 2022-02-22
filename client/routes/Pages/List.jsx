@@ -10,13 +10,13 @@ const PagesList = ({ tag: Tag = "li", wrap: Wrap = "ul" }) => {
   const bem = useClassy("PageList");
   return (
     <ul className={bem()}>
-      {pages?.map?.(({ title }) => {
+      {pages?.map?.(({ slug, title }) => {
         if (title === HOMEPAGE) return null;
         return (
           <Link
-            key={`${bem("-item")}@${title}`}
+            key={`${bem("-item")}@${slug}`}
             className={bem("-item")}
-            to={`./${title}`}
+            to={`./${slug}`}
           >
             {title}
           </Link>

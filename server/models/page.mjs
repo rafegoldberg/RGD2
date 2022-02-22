@@ -1,8 +1,5 @@
 import M from "mongoose";
-
-/* 
-GET /:page/children -> list of child pages
- */
+import generateSlug from "../../lib/generateSlug.mjs";
 
 const options = {
   timestamps: true,
@@ -18,6 +15,7 @@ const options = {
 
 const PageSchema = new M.Schema(
   {
+    slug: { type: String, trim: true, unique: true },
     title: { type: String, required: true, trim: true, unique: true },
     displayTitle: { type: String, trim: true },
     body: { type: String, trim: true },
@@ -26,16 +24,6 @@ const PageSchema = new M.Schema(
   },
   options
 );
-
-PageSchema.virtual("slug").get(function generateSlug() {
-  return this.title
-    .toLowerCase()
-    .replace(/\s+/g, "-") // replace spaces w/dashes
-    .replace(/[^\w\-]+/g, "") // remove non-word chars
-    .replace(/\-\-+/g, "-") // merge multiple dashes
-    .replace(/^-+/, "") // trim start
-    .replace(/-+$/, ""); // trim end
-});
 
 PageSchema.methods = {
   async children(fn) {
@@ -63,6 +51,20 @@ PageSchema.methods = {
     }).save();
   },
 };
+
+PageSchema.pre("save", function set_slug(next) {
+  if (!this.slug) this.slug = generateSlug(this.title);
+  return next();
+});
+PageSchema.pre("findOneAndUpdate", async function () {
+  const update = this.getUpdate();
+  const doc = (await this.model.findOne(this.getQuery())) || {};
+
+  if (update.slug) update.slug = generateSlug(update.slug);
+  else if (!doc.slug) update.slug = generateSlug(update.title || doc.title);
+
+  this.setUpdate(update);
+});
 
 export const Page = M.model("Page", PageSchema);
 

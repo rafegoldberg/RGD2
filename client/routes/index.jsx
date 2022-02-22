@@ -17,25 +17,29 @@ const { HOMEPAGE } = process.env;
 
 const swrOptions = {
   refreshInterval: 3000,
+  shouldRetryOnError: false,
 };
 
+import MDXContext from "../MDX.context";
+import Projects from "./Projects";
+
 const AppRouter = () => (
-  <SWRConfig value={swrOptions}>
-    {/* <Routes>
-      <Route path="*" element={<AdminDash />} />
-    </Routes> */}
-    <Routes>
-      <Route path="/" element={<PagesWrap />}>
-        {/* <Route path=":title" element={<Page />} /> */}
-        <Route path="*" element={<Page />} />
-        <Route index element={<Page />} />
-      </Route>
-      <Route path="users" element={<UsersWrap />}>
-        <Route path=":username" element={<User />} />
-        <Route index element={<Users />} />
-      </Route>
-    </Routes>
-  </SWRConfig>
+  <MDXContext>
+    <SWRConfig value={swrOptions}>
+      <Routes>{/* <Route path="*" element={<AdminDash />} /> */}</Routes>
+      <Routes>
+        <Route path="/" element={<PagesWrap />}>
+          <Route path="where/:slug" element={<Projects />} />
+          <Route path="*" element={<Page />} />
+          <Route index element={<Page />} />
+        </Route>
+        <Route path="users" element={<UsersWrap />}>
+          <Route path=":username" element={<User />} />
+          <Route index element={<Users />} />
+        </Route>
+      </Routes>
+    </SWRConfig>
+  </MDXContext>
 );
 
 export default AppRouter;

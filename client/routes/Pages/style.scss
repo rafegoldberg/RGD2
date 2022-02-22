@@ -1,12 +1,26 @@
-$leftOffset: 1.33em;
+@import "../../styles/$break.scss";
+@import "../../styles/$layout.scss";
+
+$pad: $layout-bodyPadding;
 
 .Pages {
   #App > & {
+    flex: 1;
+    min-height: inherit;
     display: inherit;
-    flex-flow: nowrap column;
-    align-self: stretch;
+    justify-content: inherit;
+    align-items: inherit;
+    @media (max-width: $break-mobile) {
+      flex-direction: column;
+    }
+  }
+  & > :last-child {
+    flex: 1;
+    @media (max-width: $break-mobile) {
+      display: flex;
+    }
     > .Page {
-      margin: auto 0;
+      margin: auto;
     }
   }
 }
@@ -14,7 +28,7 @@ $leftOffset: 1.33em;
 .Page {
   width: 100vw;
   max-width: 42em;
-  padding: $leftOffset;
+  padding: $layout-bodyPadding;
   box-sizing: border-box;
   img[src*="hexy"] {
     width: 4em;
@@ -25,24 +39,22 @@ $leftOffset: 1.33em;
 }
 
 .PageList {
-  @media (min-width: 60em) {
+  display: flex;
+  @media (min-width: $break-mobile) {
     writing-mode: vertical-rl;
-    display: flex;
     list-style: none;
     height: 100vh;
-    position: fixed;
-    left: 0;
+    align-self: flex-start;
+    position: sticky;
     top: 0;
     margin: 0;
     box-sizing: border-box;
     &-item {
-      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       border-right: 1px solid;
       box-shadow: 0 0 0 transparent;
-      transition: 0.3s;
       & + & {
         border-top: 1px solid;
       }
@@ -51,8 +63,28 @@ $leftOffset: 1.33em;
       }
     }
   }
-  margin-left: calc(#{$leftOffset} - 0.33em);
+  @media (max-width: $break-mobile) {
+    position: sticky;
+    top: -1px;
+    width: 100%;
+    align-self: self-end;
+    margin: 2em 0 2.5em;
+    background: var(--matte);
+    transition: .3s;
+    z-index: 100;
+    &-item {
+      transition: .3s;
+      text-align: center;
+      border: solid var(--edge);
+      border-width: 1px 0;
+      & + & {
+        border-left: 1px solid var(--edge);
+      }
+    }
+  }
   &-item {
+    flex: 1;
+    transition: 0.3s;
     padding: 0.33em;
     &:hover {
       background: var(--matte-pop);

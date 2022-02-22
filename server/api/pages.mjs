@@ -1,4 +1,5 @@
 import Page, { ChildPage } from "../models/page.mjs";
+import generateSlug from "../../lib/generateSlug.mjs";
 
 const POPULATE = ["author", { path: "parent", select: "title" }];
 const OPTIONS = {
@@ -25,8 +26,9 @@ export async function findPages(filter = {}) {
 }
 
 export default (app) => {
-  app.get("/api/pages/:title?", async ({ query, params: { title } }, res) => {
-    const filter = title ? { title, ...query } : query;
+  app.get("/api/pages/:slug?", async ({ query, params }, res) => {
+    const slug = generateSlug(params.slug);
+    const filter = slug ? { slug, ...query } : query;
     try {
       const pages = await findPages(filter);
       if (!pages.length)
@@ -40,19 +42,19 @@ export default (app) => {
       return res.status(400).json({ error: e.message });
     }
   });
-  app.post("/api/pages/:title", async ({ query, params }, res) => {
-    const { title } = params;
+  app.post("/api/pages/:slug", async ({ query, params }, res) => {
+    const { slug } = params;
     try {
-      const updated = await updatePage(title, query);
+      const updated = await updatePage(slug, query);
       return res.json(updated);
     } catch (e) {
       return res.status(500).json({ error: e.message });
     }
   });
-  app.put("/api/pages/:title", async ({ query, params }, res) => {
-    let { title } = params;
+  app.put("/api/pages/:slug", async ({ query, params }, res) => {
+    let { slug } = params;
     try {
-      const updated = await updatePage(title, query, true);
+      const updated = await updatePage(slug, query, true);
       return res.json(updated);
     } catch (e) {
       return res.status(500).json({ error: e.message });
