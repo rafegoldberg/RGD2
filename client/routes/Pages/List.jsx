@@ -17,6 +17,7 @@ const PagesList = ({ tag: Tag = "li", wrap: Wrap = "ul" }) => {
             key={`${bem("-item")}@${slug}`}
             className={bem("-item")}
             to={`./${slug}`}
+            exact
           >
             {title}
           </Link>
