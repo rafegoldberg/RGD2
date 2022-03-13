@@ -15,7 +15,7 @@ const Page = ({ children, ...props }) => {
   const bem = useClassy("Page");
   const isHome = page?.title === HOMEPAGE;
   return (
-    <article className={bem()}>
+    <article className={bem("&", props.className)}>
       {!children && err && (
         <header>
           <h2>{err.title}</h2>
