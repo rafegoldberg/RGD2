@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProjectHeader = ({ children }) => (
+const ProjectHeader = ({ children, position }) => (
   <h2 className="Page_project-header">
     <Link to="./..">←</Link>
     {children}

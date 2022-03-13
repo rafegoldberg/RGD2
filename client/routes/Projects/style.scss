@@ -1,5 +1,27 @@
 @import "../../styles/$break.scss";
 .Page_project {
+  &List {
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.33em;
+      line-height: 1;
+      & + li {
+        margin-top: 0.66em;
+      }
+    }
+    a:first-child {
+      color: var(--links);
+    }
+    small {
+      opacity: 0.5;
+      text-align: right;
+      font-size: smaller;
+      font-variant: small-caps;
+      font-weight: 300;
+    }
+  }
   &-header {
     margin-top: 0;
     > a:first-child {
