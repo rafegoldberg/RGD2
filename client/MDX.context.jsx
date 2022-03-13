@@ -9,7 +9,6 @@ import { Link, useLocation } from "react-router-dom";
 export const components = {
   img: ({ className, ...props }) => {
     const [loading, setLoading] = useState("loading");
-    console.log({ className, ...props });
     return (
       <img
         {...props}

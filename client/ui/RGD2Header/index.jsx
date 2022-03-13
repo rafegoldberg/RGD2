@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Header = ({ children, ...props }) => {
   const navigate = useNavigate();
-  console.log({ navigate });
   const handleClick = () => navigate("/");
   return (
     <header className="RGD2" onClick={handleClick}>

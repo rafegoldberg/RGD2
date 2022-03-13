@@ -6,10 +6,11 @@
   "source": "index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "build": "npm run clean public/* && parcel build --dist-dir public",
+    "build": "parcel build --dist-dir public",
     "start": "nodemon ./server/index.mjs",
     "clean": "rm -rf .parcel-cache/",
-    "watch": "npm run clean && NODE_ENV=local parcel"
+    "dev": "npm run clean && NODE_ENV=local parcel",
+    "watch": "nodemon -e js,jsx,scss,mdx,png,jpg,jpeg --exec \"npm run build -- --no-optimize\" --ignore public --watch client"
   },
   "dependencies": {
     "@mdx-js/runtime": "^1.6.22",

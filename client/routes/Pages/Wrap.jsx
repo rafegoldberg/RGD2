@@ -13,9 +13,12 @@ const { HOMEPAGE } = process.env;
 const PagesWrap = () => {
   const bem = useClassy("Pages");
   let { slug, ["*"]: path } = useParams();
-  const res = usePagesAPI(
-    slug || path?.split("/")?.reverse?.()?.[0] || HOMEPAGE
-  );
+  path = path
+    ?.split("/")
+    ?.filter?.((v) => !!v)
+    ?.reverse?.()?.[0];
+  console.log({ slug, path, HOMEPAGE });
+  const res = usePagesAPI(slug || path || HOMEPAGE);
   return (
     <div className={bem()}>
       <SWRConfig value={{ revalidateIfStale: false }}>
