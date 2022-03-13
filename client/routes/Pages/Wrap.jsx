@@ -17,7 +17,6 @@ const PagesWrap = () => {
     ?.split("/")
     ?.filter?.((v) => !!v)
     ?.reverse?.()?.[0];
-  console.log({ slug, path, HOMEPAGE });
   const res = usePagesAPI(slug || path || HOMEPAGE);
   return (
     <div className={bem()}>
