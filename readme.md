@@ -3,7 +3,7 @@
 
 <details>
 <summary><b>App Details</b>…</summary>
-<hr>
+<br>
 
 > A simple mongo-backed API & reactive client-side UI.
 >
