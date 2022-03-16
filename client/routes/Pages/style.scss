@@ -68,12 +68,15 @@ $pad: $layout-bodyPadding;
     top: 0px;
     width: 100%;
     align-self: self-end;
+
     margin: 3.5em 0 3.5em;
+    margin: 3.5em 0 0;
+
     background: var(--matte);
-    transition: .3s;
+    transition: 0.3s;
     z-index: 100;
     &-item {
-      transition: .3s;
+      transition: 0.3s;
       text-align: center;
       border: solid var(--edge);
       border-width: 1px 0;

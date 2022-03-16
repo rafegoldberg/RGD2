@@ -31,13 +31,27 @@
     position: sticky;
     top: -3.5em;
     z-index: 9999;
-    pointer-events: none;
-    opacity: .63;
     h1 {
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      text-align: center;
+      transform: unset;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.66rem;
+      opacity: 0.5;
     }
     svg {
       position: absolute;
+      pointer-events: none;
+      opacity: 0.25;
+      @media (prefers-color-scheme: dark) {
+        opacity: 0.15;
+      }
     }
   }
 }
