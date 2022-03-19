@@ -6,8 +6,8 @@
   "source": "index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "build": "parcel build --dist-dir public",
-    "start": "nodemon ./server/index.mjs",
+    "build": "parcel build --dist-dir dist",
+    "start": "nodemon ./server/index.mjs --watch server",
     "clean": "rm -rf .parcel-cache/",
     "dev": "npm run clean && NODE_ENV=local parcel",
     "watch": "nodemon -e js,jsx,scss,mdx,png,jpg,jpeg --exec \"npm run build -- --no-optimize\" --ignore public --watch client"

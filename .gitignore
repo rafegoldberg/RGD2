@@ -1,10 +1,8 @@
 .env
 dist
-public
 
-*.temp.*
-.vscode
 node_modules
 .parcel-cache
 
+*.temp.*
 .DS_Store

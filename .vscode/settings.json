@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    ".*": true,
+    "{dist}": true,
+    "{node_modules,*lock.json}": true,
+  },
+  "search.exclude": {
+    ".*": false,
+  }
+}

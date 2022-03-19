@@ -16,10 +16,9 @@ setupSession(app);
 registerUsersAPI(app);
 registerPagesAPI(app);
 
-const statics = express.static("public");
-app.use(statics);
-app.use("*", statics);
-
-app.use("*", (req, res) => res.status(400).json({ error: "Route Not Found" }));
+const staticAssets = express.static("public");
+const staticClient = express.static("dist");
+app.use(staticAssets, staticClient);
+app.use("*", staticClient);
 
 export default app;
