@@ -6,7 +6,7 @@ Hey there! 👋 I’m Rafe, a front end engineer and digital designer. This is t
 ### App Details
 
 #### Development
-To work on the app locally, clone it, `cd` in to the repo, and `npm install`. Then run the `start` and `dev` (or `watch`) scripts simultaneously.
+To work on the app, clone it locally, `cd` in to the repo, and `npm install`. Then run the `start` and `dev` scripts simultaneously.
 
 #### Stack
 | **React**     | **Mongo**       | **Express**     |
