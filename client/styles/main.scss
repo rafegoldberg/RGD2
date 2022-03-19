@@ -3,14 +3,15 @@
 @import "./--theme.scss";
 @import "./@expand.scss";
 @import "./@fluidtype.scss";
+@import "./$break.scss";
 @import "./images.scss";
 @import "./headings.scss";
 @import "./tables.scss";
 
 :root {
-  @include expand($theme, '--');
+  @include expand($theme, "--");
   @media (prefers-color-scheme: dark) {
-    @include expand($theme-dark, '--');
+    @include expand($theme-dark, "--");
   }
 }
 
@@ -27,7 +28,7 @@ html {
     padding: 0;
     background: var(--matte);
     color: var(--text);
-    transition: .3s .1s;
+    transition: 0.3s 0.1s;
     transition-property: background, color;
     text-size-adjust: none;
   }
@@ -38,6 +39,9 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: $break-mobile) {
+    flex-flow: nowrap column;
+  }
 }
 
 a {
