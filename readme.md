@@ -1,4 +1,4 @@
-<img alt="it me!" src="./public/logo.svg" width="66" align="right" /> [RGD2][app]
+[<img alt="it me!" src="./public/logo.svg" width="66" align="right" />][app] [RGD2][app]
 ===
 
 Hey there! 👋 I’m Rafe, a front end engineer and digital designer. This is the codebase for [my personal portfolio site][app].
