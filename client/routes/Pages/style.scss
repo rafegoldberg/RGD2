@@ -29,6 +29,9 @@ $pad: $layout-bodyPadding;
   max-width: 42em;
   padding: $layout-bodyPadding;
   box-sizing: border-box;
+  @media (max-width: $break-mobile) {
+    padding: 0 $layout-bodyPadding;
+  }
   img[src*="hexy"] {
     width: 4em;
     float: right;

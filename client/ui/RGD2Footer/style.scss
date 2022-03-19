@@ -6,11 +6,16 @@
   font-size: 0.75em;
   display: inline-flex;
   background: var(--matte);
-  transition: .3s .1s;
-  @media (min-width: $break-mobile) {
-    position: fixed;
+  transition: 0.3s 0.1s;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  @media (max-width: $break-mobile) {
+    position: sticky;
     bottom: 0;
-    right: 0;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
   }
   &_link {
     transition: 0.2s;
