@@ -1,7 +1,7 @@
 [RGD2][app]
 ===
 
-<img alt="it me!" src="./public/profile.png" width="66" align="right" /> Hey there, I’m Rafe! 👋 I’m the frontend engineer and digital designer behind RGD2. I’ve [worked alongside **some amazing teams**][where], and have [picked up **a few tricks**][what] along the way.
+<img alt="it me!" src="./public/profile.png" width="66" align="right" /> Hey there! 👋 I’m Rafe, a frontend engineer and digital designer. I’ve [worked alongside some amazing teams][where], and I’ve [picked up a few tricks][what] along the way. This is the codebase [for my website][app].
 
 [app]: http://rgd2.co
 [what]: https://www.rgd2.co/what
