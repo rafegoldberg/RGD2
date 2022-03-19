@@ -6,6 +6,7 @@
   font-size: 0.75em;
   display: inline-flex;
   background: var(--matte);
+  transition: .3s .1s;
   @media (min-width: $break-mobile) {
     position: fixed;
     bottom: 0;

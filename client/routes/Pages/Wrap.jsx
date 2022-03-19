@@ -24,9 +24,9 @@ const PagesWrap = () => {
         <RGD2Header />
         <Pages />
       </SWRConfig>
-      <div>
+      <main>
         <Outlet context={res} />
-      </div>
+      </main>
     </div>
   );
 };
