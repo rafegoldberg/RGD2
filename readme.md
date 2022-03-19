@@ -21,4 +21,4 @@ To work on the app, clone it locally, `cd` in to the repo, and `npm install`. Th
 [api endpoints]: https://github.com/rafegoldberg/rgd2/tree/next/server/api
 [server]: https://dashboard.heroku.com/apps/rgd2
 
-[app]: http://rgd2.co
+[app]: https://www.rgd2.co
