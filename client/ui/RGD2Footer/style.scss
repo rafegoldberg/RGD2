@@ -2,14 +2,16 @@
 
 .RGD2Footer {
   $BEM: &;
-  padding: 0.5em;
+  padding: .6em 0 .6em .6em;
   font-size: 0.75em;
   display: inline-flex;
   background: var(--matte);
-  transition: 0.3s 0.1s;
+  transition: 0.42s;
   position: fixed;
   bottom: 0;
-  right: 0;
+  @media (min-width: $break-mobile) {
+    right: 1.6rem;
+  }
   @media (max-width: $break-mobile) {
     position: sticky;
     bottom: 0;
@@ -35,7 +37,6 @@
     }
     &\=resume {
       opacity: 1 !important;
-      font-weight: bold;
     }
   }
 }

@@ -12,28 +12,28 @@ const RGD2Footer = () => {
         href="/resume.pdf"
         target="_blank"
       >
-        Resume
+        resume
       </a>
       <a
-        className={bem("_link _link=twitter")}
-        href="https://twitter.com/rafegoldberg"
+        className={bem("_link _link=email")}
+        href="mailto:rafegoldberg@gmail.com?subject=Inquiry from RGD2"
         target="_blank"
       >
-        Twitter
+        email
       </a>
       <a
         className={bem("_link _link=dribbble")}
         href="https://dribbble.com/rgd2"
         target="_blank"
       >
-        Dribbble
+        dribbble
       </a>
       <a
         className={bem("_link _link=github")}
-        href="https://github.com/rafegoldberg"
+        href="https://github.com/rafegoldberg/rgd2#readme"
         target="_blank"
       >
-        GitHub
+        github
       </a>
     </footer>
   );

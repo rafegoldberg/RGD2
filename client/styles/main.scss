@@ -22,13 +22,13 @@
 html {
   line-height: 1.6;
   font-family: var(--font-sans);
-  @include fluidtype($range: 0 2400px, $scale: 14px 24px, $units: px);
+  @include fluidtype($range: 0 2400px, $scale: 16px 24px, $units: px);
   body {
     margin: 0;
     padding: 0;
     background: var(--matte);
     color: var(--text);
-    transition: 0.3s 0.1s;
+    transition: 0.42s;
     transition-property: background, color;
     text-size-adjust: none;
   }
