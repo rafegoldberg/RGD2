@@ -1,11 +1,7 @@
-[RGD2][app]
+<img alt="it me!" src="./public/logo.svg" width="66" align="right" /> [RGD2][app]
 ===
 
-<img alt="it me!" src="./public/profile.png" width="66" align="right" /> Hey there! 👋 I’m Rafe, a frontend engineer and digital designer. I’ve [worked alongside some amazing teams][where], and I’ve [picked up a few tricks][what] along the way. This is the codebase [for my website][app].
-
-[app]: http://rgd2.co
-[what]: https://www.rgd2.co/what
-[where]: https://www.rgd2.co/where
+Hey there! 👋 I’m Rafe, a front end engineer and digital designer. This is the codebase for [my personal portfolio site][app].
 
 ### App Details
 
@@ -24,3 +20,5 @@ To work on the app locally, clone it, `cd` in to the repo, and `npm install`. Th
 [model schemas]: https://github.com/rafegoldberg/rgd2/tree/next/server/models
 [endpoints]: https://github.com/rafegoldberg/rgd2/tree/next/server/api
 [heroku server]: https://dashboard.heroku.com/apps/rgd2
+
+[app]: http://rgd2.co

@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./style.scss";
-import LogoSVG from "./logo.svg";
+import LogoSVG from "../../../public/logo.svg";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({ children, ...props }) => {
